@@ -15,7 +15,7 @@ namespace ProjectForex.Client.Pages
         private string ErrorMessage;
         private string accountId = "101-004-16583730-001";
         public string instrument = "EUR_USD";
-        //private string lastTrans;
+
 
 
 

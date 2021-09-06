@@ -18,7 +18,7 @@
 </p>
 
 <div class="mb-2 p-3">
-    Choose a Instrument
+    Choose an Instrument Market
     <select class="form-control" @bind="instrument">
         <option selected disabled value="-1"> Choose a Instrument: </option>
         <option value=AUD_CAD>AUD/CAD</option>
@@ -40,7 +40,7 @@
 <BSButton @onclick="(() => TradeAction(1))">Buy</BSButton>
 <BSButton @onclick="(() => TradeAction(2))">Sell</BSButton>
 
-@if(success = true)
+@if(success == true)
 {
 <p>Traded Successfully</p>
 }
