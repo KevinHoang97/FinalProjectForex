@@ -1,0 +1,39 @@
+﻿@page "/trade"
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ProjectForex.Shared
+@attribute [Authorize]
+
+
+<h3>Trade</h3>
+
+
+<p>Units: @units</p>
+<p>Instrument: @instrument</p>
+<p>
+    Unit Input: <input @bind="units" />
+</p>
+
+<div class="mb-2 p-3">
+    Choose a Instrument
+    <select class="form-control" @bind="instrument">
+        <option selected disabled value="-1"> Choose a Instrument: </option>
+        <option value=AUD_CAD>AUD/CAD</option>
+        <option value=AUD_CHF>AUD/CHF</option>
+        <option value=EUR_USD>EUR/USD</option>
+        <option value=EUR_CAD>EUR/CAD</option>
+        <option value=EUR_GBP>EUR/GBP</option>
+        <option value=EUR_PLN>EUR/PLN</option>
+        <option value=CAD_SGD>CAD/SGD</option>
+        <option value=AUD_JPY>AUD/JPY</option>
+        <option value=EUR_AUD>EUR/AUD</option>
+        <option value=AUD_NZD>AUD/NZD</option>
+    </select>
+</div>
+
+
+
+
+<button @onclick="(() => TradeAction(1))">Buy</button>
+<button @onclick="(() => TradeAction(2))">Sell</button>

@@ -1,0 +1,56 @@
+﻿@page "/portfolio"
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ProjectForex.Shared
+@attribute [Authorize]
+
+<h3>Portfolio</h3>
+
+
+@if (accountMain != null)
+{
+    <p> Open Trade</p>
+
+    <p>Last Transaction id: </p>@accountMain.lastTransactionID
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Instrument</th>
+                <th>ID</th>
+                <th>Current Units</th>
+                <th>Open Time</th>
+                <th>Price</th>
+                <th>Market Status</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var openTrade in accountMain.trades)
+            {
+                <tr>
+                    <td>@openTrade.instrument</td>
+                    <td>@openTrade.id</td>
+                    <td>@openTrade.currentUnits</td>
+                    <td>@openTrade.openTime</td>
+                    <td>@openTrade.price</td>
+                    <td>@openTrade.state</td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+}
+else
+{
+    <p>Null</p>
+}
+
+@code {
+
+}
