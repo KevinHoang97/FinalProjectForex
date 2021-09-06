@@ -15,7 +15,7 @@ namespace ProjectForex.Client.Pages
         private string ErrorMessage;
 
 
-        private async Task GetHistoricDataAsync()
+        private async Task GetAccountDataAsync()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace ProjectForex.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            await GetHistoricDataAsync();
+            await GetAccountDataAsync();
 
 
         }

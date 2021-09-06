@@ -1,3 +1,4 @@
+using BlazorStrap;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ namespace ProjectForex.Client
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("ProjectForex.ServerAPI"));
 
             builder.Services.AddApiAuthorization();
+
+            builder.Services.AddBootstrapCss();
 
             await builder.Build().RunAsync();
         }

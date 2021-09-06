@@ -5,8 +5,10 @@
 @using ProjectForex.Shared
 @attribute [Authorize]
 
+<BSAlert Color="Color.Primary">
+    <h3>Trade</h3>
+</BSAlert>
 
-<h3>Trade</h3>
 
 
 <p>Units: @units</p>
@@ -35,5 +37,14 @@
 
 
 
-<button @onclick="(() => TradeAction(1))">Buy</button>
-<button @onclick="(() => TradeAction(2))">Sell</button>
+<BSButton @onclick="(() => TradeAction(1))">Buy</BSButton>
+<BSButton @onclick="(() => TradeAction(2))">Sell</BSButton>
+
+@if(success = true)
+{
+<p>Traded Successfully</p>
+}
+else
+{
+<p>Nothing has been Traded</p>
+}

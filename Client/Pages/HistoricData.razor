@@ -4,10 +4,6 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using ProjectForex.Shared
 
-
-<h1>HistoricData</h1>
-<h5>_________________________________</h5>
-
 @if (Mains == null)
 {
     <p><em>Problem with API</em></p>
@@ -15,13 +11,13 @@
 }
 else
 {
-    <h2>Market : @instrument</h2>
-    <h2>Granularity : @granularity</h2>
+    <p>Market : @instrument</p>
+    <p>Granularity : @granularity</p>
 
-    <h2>Count(candlesticks amount) : @count</h2>
+    <p>Count(candlesticks amount) : @count</p>
 
     <p>
-        Count Input: <input @bind="count" />
+        Candlesticks Amount Input: <input @bind="count" />
     </p>
 
     <div class="mb-2 p-3">
@@ -68,45 +64,49 @@ else
         </select>
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Complete</th>
-                <th>Volume</th>
-                <th>Time</th>
-                <th>open</th>
-                <th>high</th>
-                <th>low</th>
-                <th>close</th>
-            </tr>
-        </thead>
-        <tbody>
+ 
+            <thead>
+
+                <tr>
+                    <th scope="col">Complete</th>
+                    <th>Volume</th>
+                    <th>Time</th>
+                    <th>open</th>
+                    <th>high</th>
+                    <th>low</th>
+                    <th>close</th>
+                </tr>
+
+            </thead>
+      
+        
+            <tbody>
 
 
 
-            @if (Mains != null)
-            {
-
-                @foreach (var candles in Mains.candles)
+                @if (Mains != null)
                 {
-                    <tr>
-                        <td>@candles.complete</td>
-                        <td>@candles.volume</td>
-                        <td>@candles.time</td>
-                        <td>@candles.mid.o</td>
-                        <td>@candles.mid.h</td>
-                        <td>@candles.mid.l</td>
-                        <td>@candles.mid.c</td>
+
+                    @foreach (var candles in Mains.candles)
+                    {
+                        <tr>
+                            <td>@candles.complete</td>
+                            <td>@candles.volume</td>
+                            <td>@candles.time</td>
+                            <td>@candles.mid.o</td>
+                            <td>@candles.mid.h</td>
+                            <td>@candles.mid.l</td>
+                            <td>@candles.mid.c</td>
 
 
 
-                    </tr>
+                        </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
+            </tbody>
+   
 
 
-}
+    }
 
 

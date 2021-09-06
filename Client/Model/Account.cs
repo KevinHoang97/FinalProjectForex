@@ -82,11 +82,33 @@ namespace ProjectForex.Client.Model
         public string withdrawalLimit { get; set; }
     }
 
+    public class StopLossOnFill
+    {
+        public string price { get; set; }
+        public string timeInForce { get; set; }
+    }
+
+    public class Orders
+    {
+        public string createTime { get; set; }
+        public string id { get; set; }
+        public string instrument { get; set; }
+        public string partialFill { get; set; }
+        public string positionFill { get; set; }
+        public string price { get; set; }
+        public string state { get; set; }
+        public StopLossOnFill stopLossOnFill { get; set; }
+        public string timeInForce { get; set; }
+        public string triggerCondition { get; set; }
+        public string type { get; set; }
+        public string units { get; set; }
+    }
 
     public class Root
     {
         public List<Trade> trades { get; set; }
         public Account account { get; set; }
+        public Orders order { get; set; }
         public string lastTransactionID { get; set; }
     }
 }
