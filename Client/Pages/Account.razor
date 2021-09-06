@@ -1,0 +1,30 @@
+﻿@page "/account"
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ProjectForex.Shared
+@attribute [Authorize]
+
+<h3>Account</h3>
+
+@if (AccountMains == null)
+{
+    <p><em>Problem with API</em></p>
+}
+else
+{
+    <p>Current Account: @AccountMains.account.alias</p>
+    <p>Account ID: @AccountMains.account.id</p>
+    <p>Balance: €@AccountMains.account.balance</p>
+    <p>Currency using: @AccountMains.account.currency</p>
+    <p>Last Transaction number: @AccountMains.account.lastTransactionID</p>
+    <p>Open Positions: @AccountMains.account.openPositionCount</p>
+    <p>Open Trades: @AccountMains.account.openTradeCount</p>
+    <p>Pending Order: @AccountMains.account.pendingOrderCount</p>
+    <p>Withdrawal Limit: @AccountMains.account.withdrawalLimit</p>
+    <p>Current Values of Positions Bought: €@AccountMains.account.positionValue</p>
+
+
+
+
+}

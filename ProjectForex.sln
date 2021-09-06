@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectForex.Server", "Server\ProjectForex.Server.csproj", "{89005DF7-44CE-4069-84B6-2AF9FF978E93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectForex.Server", "Server\ProjectForex.Server.csproj", "{89005DF7-44CE-4069-84B6-2AF9FF978E93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectForex.Client", "Client\ProjectForex.Client.csproj", "{314186AD-2099-4ED5-80FF-D285A789024F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectForex.Client", "Client\ProjectForex.Client.csproj", "{314186AD-2099-4ED5-80FF-D285A789024F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectForex.Shared", "Shared\ProjectForex.Shared.csproj", "{81983C2E-DF41-4214-B443-3676792B2DBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectForex.Shared", "Shared\ProjectForex.Shared.csproj", "{81983C2E-DF41-4214-B443-3676792B2DBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
